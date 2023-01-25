@@ -13,15 +13,6 @@ const VideoDetail = () => {
   const [videos, setVideos] = useState(null);
   const { id } = useParams();
   
- 
-  // useEffect(() => {
-  //   fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
-  //       .then((data) => {
-  //         console.log(videoDetail);
-  //         console.log(data.items[0].snippet)
-  //         setVideoDetail(data.items[0])});
-          
-  // }, [id]);
 
   useEffect(() => {
     
@@ -35,10 +26,9 @@ const VideoDetail = () => {
     }
   }, [id]);
    
-  // console.log(videoDetail)
+  
   if (videoDetail !== null){
     const {snippet: {title, channelId, channelTitle}, statistics:{ viewCount, likeCount} } = videoDetail;
-    console.log(title)
  
     return ( 
       <Box minHeight="95vh">
@@ -76,4 +66,4 @@ const VideoDetail = () => {
   }
 }
 
-export default VideoDetail
+export default VideoDetail;
